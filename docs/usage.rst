@@ -49,8 +49,8 @@ You can use pprint() for better view of the json/dict data
     
     stocks = b.get_script('reliance')
     # Output:
-     pprint(stocks)
-     {500325: 'Reliance Industries Ltd. - 500325'}
+    pprint(stocks)
+    {500325: 'Reliance Industries Ltd. - 500325'}
 
 Getting a stock quote
 ---------------------
@@ -80,7 +80,7 @@ This method returns current price, detail high-low prices and other info you can
         'group': 'A',
         'index': 'S&P BSE SENSEX',
         'lastOpen': '1354.90',
-       'ltd': 'LTD- 24 Apr 20 | 03:59 PM',
+        'ltd': 'LTD- 24 Apr 20 | 03:59 PM',
         'mktCap': {'in': 'Cr', 'value': '8,98,499.89'},
         'pChange': '+3.34',
         'previousClose': '1371.50',
@@ -202,7 +202,7 @@ Daily basis performance analysis of stock
                'msg': 'Outperformed Sector by 1.16%'},
               {'dir': 1,
                'header': 'Consecutive Gain',
-              'msg': 'Stock has been gaining for the last 3 days and has '
+               'msg': 'Stock has been gaining for the last 3 days and has '
                        'risen 14.52% returns in the period'},
               {'dir': 1,
                'header': "Day's High",
