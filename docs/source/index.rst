@@ -11,16 +11,3 @@ Python library for extracting real-time data from Bombay Stock Exchange (India)
 .. warning::
 Please do not use this application for production usage. It is best used for learning 
 and building application for your own use. For commercial application you better buy a data service.
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
