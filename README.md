@@ -35,7 +35,9 @@ The data is as accurate as provided on the [BSE website](m.bseindia.com).
 * Getting analysis regarding corporates performance and valuation. 
 * Getting corporates basic business information.
 
+## Usage
 
+Refer the documentation at https://bselib.readthedocs.io/en/latest/
 
 ## Dependencies
 
