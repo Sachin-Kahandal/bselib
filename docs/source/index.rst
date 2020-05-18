@@ -50,7 +50,7 @@ You can use pprint() for better view of the json/dict data
     533143: 'Reliance Broadcast Network Ltd. (Delisted)',
     540709: 'Reliance Home Finance Ltd.'}
     
-    stocks = b.get_script('reliance')
+    stocks = b.get_script(500325)
     # Output:
     pprint(stocks)
     {500325: 'Reliance Industries Ltd. - 500325'}
@@ -349,4 +349,4 @@ Getting Bulk deal information
     [{"DealDate":"27/03/2020","Type":"B","Qty":"76735388","Rate":"1056.00","TO":"8103.26"},
     {"DealDate":"27/03/2020","Type":"S","Qty":"86552244","Rate":"1056.61","TO":"9145.20"},
     {"DealDate":"25/03/2020","Type":"B","Qty":"116081170","Rate":"949.50","TO":"11021.91"},
-    {"DealDate":"25/03/2020","Type":"S","Qty":"116081170","Rate":"949.50","TO":"11021.91"}]'
+    {"DealDate":"25/03/2020","Type":"S","Qty":"116081170","Rate":"949.50","TO":"11021.91"}]
