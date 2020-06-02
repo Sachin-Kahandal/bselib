@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bselib",
-    version="0.0.1",
+    version="0.0.5",
     author="Sachin Kahandal",
     author_email="sachinkahandal142@gmail.com",
     description="A package for stocks data listed on Bombay Stock Exchange",
@@ -20,6 +20,7 @@ setuptools.setup(
         'requests>=2.23.0',
         'pandas>=1.0.0',
         'html5lib>=1.0.0',
+        'lxml>=4.0.0',
     ],
     classifiers=(
         "Programming Language :: Python :: 2.7",

@@ -1,27 +1,26 @@
-from bselib import analysis, corporate, gainers, script, holdings, index, bulk
-from bselib import kyc, losers, news, peers, quote, ratios, statements, stmt_analysis
+from bselib import analysis, gainers, script, quote, statements
 
 class BSE:
     """
     This class implements all the functions for bselib
     """
-    def get_script(self, stock):
+    def analysis(self, script_code):
         """
-        :Returns a script codes for searched stock
+        :Returns analysis of price and value for script
         """
-        return script.get_script(stock)
+        return analysis.analysis(script_code)
 
-    def performance_analysis(self, script_code):
+    def stmt_analysis(self, script_code, stats):
         """
-        :Returns analysis of prices and value for script
+        :Returns analysis of financial statements
         """
-        return analysis.performance_analysis(script_code)
+        return analysis.stmt_analysis(script_code, stats)        
 
     def corporate_actions(self, script_code):
         """
         :Returns info about board meetings, dividends, split, bonus and rights issued
         """
-        return corporate.corporate_actions(script_code)
+        return quote.corporate_actions(script_code)
 
     def get_gainers(self):
         """
@@ -33,37 +32,43 @@ class BSE:
         """
         :Returns shareholding pattern and analysis
         """
-        return holdings.holdings(script_code)
+        return quote.holdings(script_code)
 
     def index(self):
         """
         :Returns NSE and BSE basic info
         """
-        return index.get_index()
-    
-    def comp_details(self,script_code):
-        """
-        :Returns info about companies buisness
-        """
-        return kyc.comp_details(script_code)
+        return gainers.get_index()
 
     def get_losers(self):
         """
         :Returns worst 5 perfomers of the day
         """
-        return losers.get_losers()
+        return gainers.get_losers()
 
     def news(self, script_code):
         """
         :Returns news related to company
         """
-        return news.news(script_code)
+        return quote.news(script_code)
 
     def peers(self, script_code):
         """
         :returns competitors and some info within same sector
         """
-        return peers.peers(script_code)
+        return quote.peers(script_code)
+
+    def comp_profile(self,script_code):
+        """
+        :Returns info about companies buisness
+        """
+        return quote.get_profile(script_code)
+
+    def script(self, stock):
+        """
+        :Returns a script codes for searched stock
+        """
+        return script.script(stock)
 
     def quote(self, script_code):
         """
@@ -71,29 +76,42 @@ class BSE:
         """
         return quote.quote(script_code)
 
-    def ratios(self, script_code):
+    def bulk_deals(self,script_code):
         """
         financial ratios which can be used to determine the stocks health/value/performance
         """
-        return ratios.ratios(script_code)
+        return quote.bulk_deals(script_code)
 
-    def stmts(self, script_code):
+    def ratios(self, script_code):
         """
-        :Returns snapshots of historical financial statements with links to annual reports and credit reports
+        :Returns few key financial ratios
         """
-        return statements.stmts(script_code)
+        return quote.ratios(script_code)
 
-    def stmt_analysis(self, script_code):
+    def statement(self, script_code, stats):
         """
-        :Returns analysis of financial stattements
+        :Returns snapshot of recent financial statements
         """
-        return stmt_analysis.stmt_analysis(script_code)
+        return statements.statement(script_code, stats)
 
-    def bulk(self,script_code):
+    def historical_stats(self, script_code, stats):
         """
-        :Returns bulk deals done in recent past
+        :Returns snapshots of historical financial statements
         """
-        return bulk.bulk(script_code)
+        return statements.historical_stats(script_code, stats)
+
+
+    def annual_reports(self, script_code):
+        """
+        Returns links to annual reports
+        """
+        return statements.annual_reports(script_code)
+
+    def credit_reports(self, script_code):
+        """
+        :Returns links to credit reports 
+        """
+        return statements.credit_reports(script_code)
 
     def __str__(self):
         return 'Driver Class for Bombay Stock Exchange'

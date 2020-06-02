@@ -188,7 +188,7 @@ Output is quite big to be displayed but it will be similar to Performance Analys
 
 .. code-block:: Python
 
-     pa = b.perform_analysis(500325)
+     pa = b.performance_analysis(500325)
 
 
 Getting Performance Analysis

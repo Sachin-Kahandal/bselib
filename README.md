@@ -4,13 +4,12 @@ Python library for extracting real-time data from Bombay Stock Exchange (India).
 
 ## Introduction
 
-bselib is a library for collecting real-time data from Bombay Stock Exchange (India) and 
+bselib is a library that collects real-time data from Bombay Stock Exchange (India) and 
 historical data from some other sites. It can be used in various types of projects which 
 require getting live quotes, historical data at some extent, corporate news and their actions,
-ratios, financial statements, credit reports and analysis for projects like portfolio management, 
-stocks simulator and data analysis.
+ratios, financial statements, credit reports and analysis. Stock simulator and Portfolio management for an example 
 
-The data is as accurate as provided on the [BSE website](m.bseindia.com).
+The quote is as accurate as provided on the [BSE website](m.bseindia.com).
 
 > **Please do not use this application for production usage. It is best used for learning and building application for your own use. For commercial application you better buy a data service.**
 >
@@ -24,7 +23,7 @@ The data is as accurate as provided on the [BSE website](m.bseindia.com).
 * Getting list of top gainers and losers.
 * Getting quotes for all the stocks listed on BSE.
 * Getting historical summary of corporate's quarterly results, balance sheets, profit-loss and cash-flow statements.
-* Getting analysis of finacial statements, quarterly and  annual results. 
+* Getting analysis of finacial statements, quarterly and  annual results, balacesheets and cashflows. 
 * Getting information about corporate's board meetings, dividends, bonus, splits, and rights issued.
 * Getting links of credit reports from ICRA and CARE rating agencies.
 * Getting corporate's shareholding information.
@@ -45,13 +44,11 @@ Refer the documentation at https://bselib.readthedocs.io/en/latest/
 * [Requests](http://docs.python-requests.org/en/master/)
 * [Pandas](https://pandas.pydata.org/docs/index.html)
 * [Html5lilb](https://html5lib.readthedocs.io/en/latest/)
-* [JSON](https://docs.python.org/3/library/json.html)
-* A working internet connection
+* A fast internet connection.
 
 ## Acknowledgement
 
 * Eknath Salvi Sir
-
 
 ## License
 
