@@ -46,10 +46,6 @@ Refer the documentation at https://bselib.readthedocs.io/en/latest/
 * [Html5lilb](https://html5lib.readthedocs.io/en/latest/)
 * A fast internet connection.
 
-## Acknowledgement
-
-* Eknath Salvi Sir
-
 ## License
 
 MIT License
