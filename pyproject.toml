@@ -82,7 +82,8 @@ ignore = [
 "tests/*" = ["B011"]
 
 [tool.mypy]
-python_version = "3.9"
+# Lowest version this mypy supports; runtime 3.9 compat is enforced by ruff's py39 target.
+python_version = "3.10"
 files = ["src/bselib"]
 warn_unused_configs = true
 warn_redundant_casts = true

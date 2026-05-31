@@ -1,120 +1,91 @@
-from bselib import analysis, gainers, script, quote, statements
+from __future__ import annotations
+
+from typing import Any
+
+from bselib import analysis, gainers, quote, script, statements
+
 
 class BSE:
+    """Facade exposing every bselib feature through one stateless object.
+
+    Each method delegates to a module-level function. Errors are returned as
+    sentinel dicts (e.g. ``{'info': 'Error'}``), never raised.
     """
-    This class implements all the functions for bselib
-    """
-    def analysis(self, script_code):
-        """
-        :Returns analysis of price and value for script
-        """
+
+    def analysis(self, script_code: int | str) -> dict[str, Any] | tuple[Any, Any]:
+        """Return analysis of price and value for a script."""
         return analysis.analysis(script_code)
 
-    def stmt_analysis(self, script_code, stats):
-        """
-        :Returns analysis of financial statements
-        """
-        return analysis.stmt_analysis(script_code, stats)        
+    def stmt_analysis(self, script_code: int | str, stats: str) -> dict[str, Any] | tuple[Any, Any]:
+        """Return analysis of financial statements."""
+        return analysis.stmt_analysis(script_code, stats)
 
-    def corporate_actions(self, script_code):
-        """
-        :Returns info about board meetings, dividends, split, bonus and rights issued
-        """
+    def corporate_actions(self, script_code: int | str) -> dict[str, Any]:
+        """Return board meetings, dividends, splits, bonus and rights issued."""
         return quote.corporate_actions(script_code)
 
-    def get_gainers(self):
-        """
-        :Returns top 5 perfomers of the day
-        """
+    def get_gainers(self) -> dict[str, Any]:
+        """Return the top 5 performers of the day."""
         return gainers.get_gainers()
 
-    def holdings(self, script_code):
-        """
-        :Returns shareholding pattern and analysis
-        """
+    def holdings(self, script_code: int | str) -> dict[str, Any]:
+        """Return the shareholding pattern and analysis."""
         return quote.holdings(script_code)
 
-    def index(self):
-        """
-        :Returns NSE and BSE basic info
-        """
+    def index(self) -> tuple[Any, Any]:
+        """Return NSE and BSE basic market status."""
         return gainers.get_index()
 
-    def get_losers(self):
-        """
-        :Returns worst 5 perfomers of the day
-        """
+    def get_losers(self) -> dict[str, Any]:
+        """Return the worst 5 performers of the day."""
         return gainers.get_losers()
 
-    def news(self, script_code):
-        """
-        :Returns news related to company
-        """
+    def news(self, script_code: int | str) -> dict[str, Any]:
+        """Return news related to a company."""
         return quote.news(script_code)
 
-    def peers(self, script_code):
-        """
-        :returns competitors and some info within same sector
-        """
+    def peers(self, script_code: int | str) -> dict[str, Any]:
+        """Return competitors and some info within the same sector."""
         return quote.peers(script_code)
 
-    def comp_profile(self,script_code):
-        """
-        :Returns info about companies buisness
-        """
+    def comp_profile(self, script_code: int | str) -> dict[str, Any]:
+        """Return information about a company's business."""
         return quote.get_profile(script_code)
 
-    def script(self, stock):
-        """
-        :Returns a script codes for searched stock
-        """
+    def script(self, stock: int | str) -> dict[str, Any]:
+        """Return script codes for a searched stock."""
         return script.script(stock)
 
-    def quote(self, script_code):
-        """
-        :Returns basic details about stock like current price, market-cap, high-lows and bulk-deals
-        """
+    def quote(self, script_code: int | str) -> dict[str, Any]:
+        """Return basic details: current price, market cap, highs/lows and bulk deals."""
         return quote.quote(script_code)
 
-    def bulk_deals(self,script_code):
-        """
-        financial ratios which can be used to determine the stocks health/value/performance
-        """
+    def bulk_deals(self, script_code: int | str) -> dict[str, Any]:
+        """Return bulk deals for a script."""
         return quote.bulk_deals(script_code)
 
-    def ratios(self, script_code):
-        """
-        :Returns few key financial ratios
-        """
+    def ratios(self, script_code: int | str) -> dict[str, Any]:
+        """Return a few key financial ratios."""
         return quote.ratios(script_code)
 
-    def statement(self, script_code, stats):
-        """
-        :Returns snapshot of recent financial statements
-        """
+    def statement(self, script_code: int | str, stats: str) -> dict[str, Any]:
+        """Return a snapshot of recent financial statements."""
         return statements.statement(script_code, stats)
 
-    def historical_stats(self, script_code, stats):
-        """
-        :Returns snapshots of historical financial statements
-        """
+    def historical_stats(self, script_code: int | str, stats: str) -> dict[str, Any]:
+        """Return snapshots of historical financial statements."""
         return statements.historical_stats(script_code, stats)
 
-
-    def annual_reports(self, script_code):
-        """
-        Returns links to annual reports
-        """
+    def annual_reports(self, script_code: int | str) -> dict[str, Any]:
+        """Return links to annual reports."""
         return statements.annual_reports(script_code)
 
-    def credit_reports(self, script_code):
-        """
-        :Returns links to credit reports 
-        """
+    def credit_reports(self, script_code: int | str) -> dict[str, Any]:
+        """Return links to credit reports."""
         return statements.credit_reports(script_code)
 
-    def __str__(self):
-        return 'Driver Class for Bombay Stock Exchange'
+    def __str__(self) -> str:
+        return "Driver Class for Bombay Stock Exchange"
 
-    def __repr__(self):
-        return 'Driver Class for Bombay Stock Exchange'
+    def __repr__(self) -> str:
+        return "Driver Class for Bombay Stock Exchange"
