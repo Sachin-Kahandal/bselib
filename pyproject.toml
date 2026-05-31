@@ -1,0 +1,116 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bselib"
+version = "0.0.5"
+description = "A library for stock data listed on the Bombay Stock Exchange (BSE)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Sachin Kahandal", email = "sachinkahandal142@gmail.com" }]
+keywords = ["bse", "stocks", "finance", "scraping", "india", "bombay-stock-exchange"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial",
+    "Typing :: Typed",
+]
+dependencies = [
+    "beautifulsoup4>=4.9,<5",
+    "requests>=2.25,<3",
+    "pandas>=1.5,<3",
+    "html5lib>=1.1,<2",
+    "lxml>=4.6,<6",
+]
+
+[project.urls]
+Homepage = "https://github.com/Sachin-Kahandal/bselib"
+Documentation = "https://bselib.readthedocs.io/en/latest/"
+Repository = "https://github.com/Sachin-Kahandal/bselib"
+Issues = "https://github.com/Sachin-Kahandal/bselib/issues"
+Changelog = "https://github.com/Sachin-Kahandal/bselib/blob/master/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "types-requests",
+    "pandas-stubs",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bselib"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/bselib", "README.md", "LICENSE", "CHANGELOG.md", "DESIGN_DECISIONS.md"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "E501", # line length is handled by the formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[tool.mypy]
+# Lowest version this mypy supports; runtime 3.9 compat is enforced by ruff's py39 target.
+python_version = "3.10"
+files = ["src/bselib"]
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+no_implicit_optional = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+# pandas/bs4 are partially typed; don't fail on missing stubs from transitive deps.
+module = ["bs4.*", "html5lib.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra -m 'not live' --strict-markers"
+markers = [
+    "live: hits real upstream endpoints; network-dependent, deselected by default (run with -m live)",
+]
+
+[tool.coverage.run]
+source = ["bselib"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+]

@@ -1,0 +1,700 @@
+
+<!DOCTYPE HTML>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="HandheldFriendly" content="true" /><meta name="MobileOptimized" content="width" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	BSE - Get Quote
+</title><link href="include/css/style.css" rel="stylesheet" type="text/css" /><link href="include/css/glossy.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/jquery.min.js" type="text/javascript"></script>
+    <script language="javascript" nonce="page8a2c3d4f5g6">
+       
+        function scriptbseplus(scripcode1) {
+
+            var requestUrl;
+            if (scripcode1 == 'undefined') {
+                requestUrl = "https://m.bseindia.com/nocache/bgcookies.aspx";
+            }
+            else {
+                requestUrl = "https://m.bseindia.com/nocache/bgcookies.aspx?scripcd=" + scripcode1;
+            }
+            $("#divrecent").load(requestUrl);
+        }
+        function opensw(scrpt, flg) {
+
+            if (flg == "0") {
+
+                window.open("https://m.bseindia.com/StockReach.aspx?scripcd=" + scrpt, "_parent");
+            }
+            else if (flg == "1") {
+                window.open("https://m.bseindia.com/StockReach.aspx?scripcd=" + scrpt + "&id=D", "_parent");
+            }
+            else if (flg == "2") {
+                window.open("https://m.bseindia.com/stockCurrency.aspx?scripcd=" + scrpt, "_parent");
+            }
+            else if (flg == "3") {
+                window.open("https://m.bseindia.com/stockCurrency.aspx?flag=IRD&scripcd=" + scrpt, "_parent");
+            }
+        }
+        var scripcode;
+        function GetParameterValues(param) {
+            var urls = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+            for (var i = 0; i < urls.length; i++) {
+                var urlparam = urls[i].split('=');
+                if (urlparam[0] == param) {
+                    return urlparam[1];
+                }
+            }
+        }
+        $(document).ready(function () {
+            scripcode = GetParameterValues('scripcd');
+            scriptbseplus(scripcode);
+        });
+
+    </script>
+<meta name="keywords" content="Reliance Industries Ltd,RELIANCE,500325,Reliance Industries Ltd Stock Price,500325 stock price,Reliance Industries Ltd Share Price,500325 Share Price,Reliance Industries Ltd Live BSE Quotes,Reliance Industries Ltd Quote,Reliance Industries Ltd Quote,Reliance Industries Ltd Get Quote,Reliance Industries Ltd News,Reliance Industries Ltd stock price graph,Reliance Industries Ltd 52 week high low,Reliance Industries Ltd days high low, Reliance Industries Ltd announcements, Reliance Industries Ltd corporate action,Reliance Industries Ltd results" /><meta name="description" content="Get Share Stock Price of Reliance Industries Ltd on BSE. Get Live BSE quote for Reliance Industries Ltd. Get Reliance Industries Ltd stock price graph, announcements, corporate actions, financial reports, results, shareholding pattern, peer companies comparison and more. " /></head>
+<body leftmargin="1" rightmargin="1" topmargin="0" marginwidth="0" marginheight="0">
+    <form method="post" action="./StockReach.aspx?scripcd=500325" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=QIevk-htgPYn9hnuqt2dJ3QfZ5XkMI5e7DgVNONVGRAqYyL1or0GAZEDKpEGSsg31HVkM5HGAmWuq1qRllV61HswkYvSsJnDqwC5xYAMBW01&amp;t=638901724312636832" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=wR9DASatsL-Yu6gTZK0LO8XV9MP6_tI_TihzOd5NmxV7Fot2DBnJrrbDb0LAif_1_ep5nDgj46ZxHzhqY4iQ7uvThA2-9YtDfKf8yiGaaa81&amp;t=638901724312636832" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="60BE5BF5" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="DTCqVgEQwZjwBmsWqzxTTlQ/PMUEfo0/keKBBs91QY/oKxJRGOzR6mWVoxACxBAdcJ7oLVwZLuirJg9ItSutOB5mD8f6Hv+RLvb2sKfQo+UDxiYlg8pe50127cEARxVWV5jRm0ZEcoFChpgoFLh9Ll1MQWOBOKlhgLJ+uxUx4x/mW0PvFEnOJ1BfBl4dFCm6" />
+</div>
+        <div id="wrap">
+            <div>
+                
+<link href="include/css/style.css" rel="stylesheet" type="text/css" />
+<link href="include/css/glossy.css" rel="stylesheet" type="text/css" />
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-27569176-8" integrity="sha384-NiN1Dzazl0xMRddrFlnhI7Kpdf0hXTiW9mNeuQ1NPS/1Nr8ZRBKpgh6Q/4qgxGS0" crossorigin="anonymous"></script>
+<script nonce="uC1a2c3d4f5g6">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-27569176-8');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->	
+	
+
+<!--Mpulse Akamai -->
+    <script type="text/javascript" nonce="uC2a2c3d4f5g6">
+        (function () {
+            // Boomerang Loader Snippet version 10
+            if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
+                return;
+            }
+
+            window.BOOMR = window.BOOMR || {};
+            window.BOOMR.snippetExecuted = true;
+
+            var dom, doc, where, iframe = document.createElement("iframe"), win = window;
+
+            function boomerangSaveLoadTime(e) {
+                win.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+            }
+
+            if (win.addEventListener) {
+                win.addEventListener("load", boomerangSaveLoadTime, false);
+            } else if (win.attachEvent) {
+                win.attachEvent("onload", boomerangSaveLoadTime);
+            }
+
+            iframe.src = "javascript:void(0)";
+            iframe.title = "";
+            iframe.role = "presentation";
+            (iframe.frameElement || iframe).style.cssText = "width:0;height:0;border:0;display:none;";
+            where = document.getElementsByTagName("script")[0];
+            where.parentNode.insertBefore(iframe, where);
+
+            try {
+                doc = iframe.contentWindow.document;
+            } catch (e) {
+                dom = document.domain;
+                iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+                doc = iframe.contentWindow.document;
+            }
+
+            doc.open()._l = function () {
+                var js = this.createElement("script");
+                if (dom) {
+                    this.domain = dom;
+                }
+                js.id = "boomr-if-as";
+                js.src = "https://s.go-mpulse.net/boomerang/" + "DZP23-UEMEM-TZZHS-5T9A2-7WLHC";
+                BOOMR_lstart = new Date().getTime();
+                this.body.appendChild(js);
+            };
+            doc.write('<bo' + 'dy onload="document._l();">');
+            doc.close();
+        })();
+</script>
+
+	<!-- End----Mpulse Akamai -->
+	
+	 <script nonce="uC3a2c3d4f5g6">
+    function searchKeyPress(e)
+    {
+        // look for window.event in case event isn't passed in
+        e = e || window.event;
+        if (e.keyCode == 13)
+        {
+        
+            document.getElementById('UcHeaderMenu1_btnGo').click();
+            return false;
+        }
+        return true;
+    }
+    </script>
+
+<!--google analytics-->
+
+
+<!--toparea -->
+
+<div class="toparea">
+
+<div class="logoarea"><a href="Index.aspx"><img src="include/images/bselogo.gif" alt="" border="0"  /></a></div>
+
+
+<div class="rightarea">
+
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><a href="https://www.bseindia.com" class="logintext">Desktop Site</a></td>
+    <td width="10" align="center" class="logintext">|</td>
+    <td align="right" class="logintext">
+    
+    
+    <input type="submit" name="UcHeaderMenu1$lbtnlogin" value="Login" id="UcHeaderMenu1_lbtnlogin" class="logintext" />
+    </td>
+  </tr>
+  <tr><td colspan="3" height="2"></td></tr>
+  <tr>
+    <td align="right" ><strong id="UcHeaderMenu1_Opendate">29 May 26 | 16:00</strong></td>
+    <td align="center">|</td>
+    <td id="UcHeaderMenu1_tdOCP" align="center" class="opentext">Close</td>
+
+  </tr>
+</table>
+
+
+</div>
+
+
+</div>
+<!--toparea -->
+<!--navigation -->
+
+<div class="navigationarea">
+
+<table width="100%" border="0" bgcolor="#909090" height="20" cellspacing="0" cellpadding="0">
+  <tr>
+    
+    <td align="center" valign="middle"><a href="index.aspx"  class="navlink">Equity</a></td>
+    <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    
+    <td align="center" valign="middle"><a href="smemarket.aspx" class="navlink">SME</a></td>
+    <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    
+    <td align="center" valign="middle"><a href="derivatives.aspx" class="navlink">Eq Drv</a></td>
+     <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    <td align="center" valign="middle"><a href="currency.aspx" class="navlink">Currency</a></td>
+      <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+       <td align="center" valign="middle"><a href="/commodity.aspx" class="navlink">Commodity</a></td>
+     <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    <td align="center" valign="middle"><a href="corporates.aspx" class="navlink">Corporates</a></td>
+     <td id="UcHeaderMenu1_tdIpx" width="1px" style="display:none" align="center" valign="middle" bgcolor="#ffffff"></td>
+
+    <td id="UcHeaderMenu1_tdwlist" align="center" style="display:none" valign="middle"><a href="watchlist.aspx" class="navlink">Watch List</a></td>
+
+  </tr>
+</table>
+</div>
+
+<!--navigation -->
+<!--getquotearea -->
+<div class="getquotearea" >
+<span class="getquottext">Get Quote</span>
+<span><input name="UcHeaderMenu1$txtGetQuote" type="text" maxlength="10" id="UcHeaderMenu1_txtGetQuote" class="textbox" onkeypress="return searchKeyPress(event);" />
+      <span id="UcHeaderMenu1_reqGetQuote" style="display:inline-block;width:1px;visibility:hidden;">*</span>
+    
+</span>
+<span><input type="submit" name="UcHeaderMenu1$btnGo" value="Go" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;UcHeaderMenu1$btnGo&quot;, &quot;&quot;, true, &quot;GO&quot;, &quot;&quot;, false, false))" id="UcHeaderMenu1_btnGo" class="gobutton" onfocus="btnGo_Click" /></span>
+        
+        
+        <span style="margin-top:5px; float:right;">
+        
+         <table align="right" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td><a href="ncp.aspx" class="logintext">Notices</a></td>
+    <td width="20" align="center" class="logintext">|</td>
+    <td><a href="StockReach.aspx?scripcd=500325" id="UcHeaderMenu1_arefresh"><img src="include/images/refresh.gif" vspace="0" alt="" border="0"  /></a></td>
+    </tr>
+    
+    </table>
+            
+        </span>
+        <span id="UcHeaderMenu1_revgetQuote" style="display:inline-block;color:Green;width:1px;visibility:hidden;"></span>
+    <span id="UcHeaderMenu1_revgetQuote1"></span>
+
+</div>
+
+<!--getquotearea -->
+<!--sensexarea -->
+<div class="sensexarea">
+<div style="margin-left:3px; margin-right:3px; margin-top:5px;">
+<table  border="0"  align="left" width="100%"   cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="middle" align="left"><a href="Sensex.aspx" style="text-decoration:none;"> <font color="#0089d0" style="font-size:11px"><b>BSE SENSEX</b></font></a></td>
+    <td id="UcHeaderMenu1_sensexLtp" align="left" class="sensextext">74,775.74</td>
+
+    <td id="UcHeaderMenu1_imgPerChange" align="center"><img src='include/images/reddown.gif' alt='' /></td>
+
+    <td id="UcHeaderMenu1_sensexChange" align="right" class="sensextext">-1,092.06</td>
+
+    <td id="UcHeaderMenu1_sensexPerChange" align="right" class="sensextext">-1.44 %</td>
+
+
+  </tr>
+</table>   
+</div>
+
+</div>
+<!--sensexarea -->
+
+
+<!--gemini integration-->
+	
+	<script type="text/javascript" nonce='uC4a2c3d4f5g6'> 
+		ci = "0002320" 
+		errList = []; 
+		window.addEventListener('error',function(e){var obj={};try 
+		{obj['f']=(e.filename).replace("|","~$");obj['m']=(e.message);obj['l']=(e.lineno);errList.push(obj);} catch(ex){}}); 
+	</script> 
+	
+	
+	
+<!--gemini integration-->
+
+            </div>
+            <div class="companydetail">
+                <div class="companyleft">
+                    <span id="spanCname" class="companyname">Reliance Industries Ltd</span>
+                    <br>
+                    <span class="srcovalue"><strong id="strongCvalue">1320.55</strong></span>
+                    <span class="srupimg">
+                        <img src="include/images/reddown.gif" id="imgUD" border="0" /></span> <span id="spanchangVal" class="srcovalue">-29.45 ( -2.18%)</span>
+                </div>
+                <div class="companyright">
+                    <span id="strongDate">LTD- 29 May 26 | 04:00 PM</span>
+                </div>
+            </div>
+            <div class="companyinfo">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td bgcolor="#d6d6d6">
+                            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                                <tr>
+                                    <td id="tdSIDName" class="resultgreyhead">Security ID
+                                    </td>
+
+                                    <td id="tdCShortName" class="resultleft">RELIANCE</td>
+
+                                </tr>
+                                <tr>
+                                    <td id="tdSCDName" class="resultgreyhead">Security Code
+                                    </td>
+
+                                    <td id="tdscripcode" class="resultleft">500325</td>
+
+                                </tr>
+                                <tr>
+                                    <td id="tdGIName" class="resultgreyhead">Group / Index
+                                    </td>
+
+                                    <td id="tdgroup" class="resultleft">A  / BSE SENSEX</td>
+
+                                </tr>
+                                <tr>
+                                    <td id="tdFVName" class="resultgreyhead">Face value
+                                    </td>
+
+                                    <td id="tdfacevalue" class="resultleft">10.00</td>
+
+                                </tr>
+                                <tr>
+                                    <td id="tdIndName" class="resultgreyhead">Industry
+                                    </td>
+
+                                    <td id="tdIndustry" class="resultleft">Oil, Gas &amp; Consumable Fuels</td>
+
+                                </tr>
+                                <tr id="rowCategory">
+	<td id="tdCatName" class="resultgreyhead">Category
+                                    </td>
+	<td id="tdCategory" class="resultleft">Listed</td>
+</tr>
+
+                                
+                                       
+                                       
+                                       
+                                
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="menuarea">
+                <div class="glossymenu">
+                    
+                    <span class="menuitem submenuheader">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td align="left">Stock Trading
+                                </td>
+                                <!--<td align="right" class="graphtext"><a id="agraph">
+    Graph</a></td> -->
+                            </tr>
+                        </table>
+                    </span>
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <div class="scripcotent">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="TTRow_left">Previous Close / Open
+                                            </td>
+                                            <td id="tdpcloseopen" class="TTRow_right">1350.00/1363.50</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TTRow_left">Day's High / Low
+                                            </td>
+                                            <td id="tdDHL" class="TTRow_right">1369.00/1317.00</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="td52WHLName" class="TTRow_left">52 Weeks High / Low
+                                            </td>
+
+                                            <td id="td52WHL" class="TTRow_right">1611.20/1290.00</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdWAPName" class="TTRow_left">Wtd. Avg Price
+                                            </td>
+
+                                            <td id="tdWAp" class="TTRow_right">1333.66</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tr_To_ream" class="TTRow_left">Total Traded Value (Cr.)</td>
+
+                                            <td id="tdTTV" class="TTRow_right">93.97</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdTTQWName" class="TTRow_left">TTQ / 2W Avg Q (Lakh)
+                                            </td>
+
+                                            <td id="tdTTQW" class="TTRow_right">7.05/10.70</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr style="display:none">
+                                            <td id="tdCLName" class="TTRow_left">Circuit Limits
+                                            </td>
+
+                                            <td id="tdCL" class="TTRow_right">1452.60/1188.50</td>
+
+                                        </tr>
+                                        <tr style="display:none">
+                                            <td colspan="2" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr id="trMktCap" style="display:;">
+	<td id="tdMktCap" class="TTRow_left">Mkt. Cap. Full / Free Float (Cr.)
+                                            </td>
+	<td id="tdMktCapVal" class="TTRow_right">17,87,039.40 / 8,89,302.29</td>
+</tr>
+
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="menuitem submenuheader">Market Depth</span>
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <div class="scripcotent">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td colspan="2" align="center" class="TTRow_buy">
+                                                <strong>Buy</strong>
+                                            </td>
+                                            <td colspan="2" align="center" class="TTRow_sell">
+                                                <strong>Sell</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TTRow_right">
+                                                <strong>Qty</strong>
+                                            </td>
+                                            <td class="TTRowrightline">
+                                                <strong>Price</strong>
+                                            </td>
+                                            <td class="TTRow_right">
+                                                <strong>Price</strong>
+                                            </td>
+                                            <td class="TTRow_right">
+                                                <strong>Qty</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdBQ1" class="TTRow_right">-</td>
+
+                                            <td id="tdBP1" class="TTRowrightline">0.00</td>
+
+                                            <td id="tdSP1" class="TTRow_right">0.00</td>
+
+                                            <td id="tdSQ1" class="TTRow_right">-</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdBQ2" class="TTRow_right">-</td>
+
+                                            <td id="tdBP2" class="TTRowrightline">0.00</td>
+
+                                            <td id="tdSP2" class="TTRow_right">0.00</td>
+
+                                            <td id="tdSQ2" class="TTRow_right">-</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdBQ3" class="TTRow_right">-</td>
+
+                                            <td id="tdBP3" class="TTRowrightline">0.00</td>
+
+                                            <td id="tdSP3" class="TTRow_right">0.00</td>
+
+                                            <td id="tdSQ3" class="TTRow_right">-</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdBQ4" class="TTRow_right">-</td>
+
+                                            <td id="tdBP4" class="TTRowrightline">0.00</td>
+
+                                            <td id="tdSP4" class="TTRow_right">0.00</td>
+
+                                            <td id="tdSQ4" class="TTRow_right">-</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdBQ5" class="TTRow_right">-</td>
+
+                                            <td id="tdBP5" class="TTRowrightline">0.00</td>
+
+                                            <td id="tdSP5" class="TTRow_right">0.00</td>
+
+                                            <td id="tdSQ5" class="TTRow_right">-</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" height="1" bgcolor="#d6d6d6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="TTRow_right">
+                                                <strong id="tdTstrongBQ">-</strong>
+                                            </td>
+                                            <td class="TTRowrightline"></td>
+                                            <td class="TTRow_right"></td>
+                                            <td class="TTRow_right">
+                                                <strong id="tdTstrongSQ">-</strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div id="divAnn" style="display: ">
+                        <span class="menuitem submenuheader"><span>Corporate Announcement</span></span>
+                        <div class="submenu">
+                            <ul>
+                                <li>
+                                    <div id="divAnnText" class="announcetext"><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td width='10' valign='baseline'><img src='include/images/nav_bullet.gif' alt='' border='0'  /></td><td><a href='MAnnDet.aspx?newsid=c0fdfe66-8752-4e3c-af79-251acceb8d3d&Form=STR&scrpcd=500325' class='announcelink' runat='server' id='a0'>Compliances-Reg.24(A)-Annual Secretarial Compliance , May 30 2026 , 10:50AM</a></td></tr><tr><td width='10' valign='baseline'><img src='include/images/nav_bullet.gif' alt='' border='0'  /></td><td><a href='MAnnDet.aspx?newsid=95d43aaa-aea2-4e94-8c06-f77216cfdcff&Form=STR&scrpcd=500325' class='announcelink' runat='server' id='a1'>Announcement under Regulation 30 (LODR)-Credit Rating , May 29 2026 ,  8:24PM</a></td></tr><tr><td width='10' valign='baseline'><img src='include/images/nav_bullet.gif' alt='' border='0'  /></td><td><a href='MAnnDet.aspx?newsid=9a950928-fbeb-448c-89bc-b18e4a056068&Form=STR&scrpcd=500325' class='announcelink' runat='server' id='a2'>Newspaper Clippings - 'Forty-Ninth Annual General Meeting (Post-Lpo)' And Information On E-Voting" And Other Related Information
+ , May 29 2026 ,  4:43PM</a></td></tr><tr><td width='10' valign='baseline'><img src='include/images/nav_bullet.gif' alt='' border='0'  /></td><td><a href='MAnnDet.aspx?newsid=daed40c1-e942-481b-96bd-2ae61333dddc&Form=STR&scrpcd=500325' class='announcelink' runat='server' id='a3'>Business Responsibility and Sustainability Reporting (BRSR) , May 28 2026 ,  1:48PM</a></td></tr><tr><td width='10' valign='baseline'><img src='include/images/nav_bullet.gif' alt='' border='0'  /></td><td><a href='MAnnDet.aspx?newsid=84100eea-37bc-4d8c-984e-1141bd12e433&Form=STR&scrpcd=500325' class='announcelink' runat='server' id='a4'>Reg. 34 (1) Annual Report. , May 28 2026 ,  1:37PM</a></td></tr> </table></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <!--for recent visited -->
+                    <span class="menuitem submenuheader">Recent Visited</span>
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#ffffff" id="divrecent"></td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--footerarea -->
+                    <!--footerarea -->
+                    <div class="footerarea">
+                        <table width="97%" align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td id="tdfooter" colspan="2"><div align="center">Copyright@ 2015. All Rights Reserved. <font color="#0089d0">BSE Ltd.</font>
+
+  </div></td>
+
+                            </tr>
+                            <tr>
+                                <td height="10" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td id="ipadd" width="30%" align="left">(80)</td>
+
+                                <td align="right" width="70%">
+                                    <strong id="ist">31 May 26|13:59 (IST)</strong>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--footerarea -->
+                </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("UcHeaderMenu1_reqGetQuote"), document.getElementById("UcHeaderMenu1_revgetQuote"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var UcHeaderMenu1_reqGetQuote = document.all ? document.all["UcHeaderMenu1_reqGetQuote"] : document.getElementById("UcHeaderMenu1_reqGetQuote");
+UcHeaderMenu1_reqGetQuote.controltovalidate = "UcHeaderMenu1_txtGetQuote";
+UcHeaderMenu1_reqGetQuote.errormessage = "*";
+UcHeaderMenu1_reqGetQuote.validationGroup = "GO";
+UcHeaderMenu1_reqGetQuote.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+UcHeaderMenu1_reqGetQuote.initialvalue = "";
+var UcHeaderMenu1_revgetQuote = document.all ? document.all["UcHeaderMenu1_revgetQuote"] : document.getElementById("UcHeaderMenu1_revgetQuote");
+UcHeaderMenu1_revgetQuote.controltovalidate = "UcHeaderMenu1_txtGetQuote";
+UcHeaderMenu1_revgetQuote.validationGroup = "GO";
+UcHeaderMenu1_revgetQuote.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+UcHeaderMenu1_revgetQuote.validationexpression = "^[a-zA-Z0-9 ]{1,10}$";
+//]]>
+</script>
+
+<script nonce='uC8a2c3d4f5g6' type=text/javascript>scriptbseplus('500325');</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+    
+</body>
+</html>
+
