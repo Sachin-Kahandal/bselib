@@ -10,7 +10,7 @@
 - **Version at time of writing:** 0.0.5
 - **License:** MIT
 - **Maintainer:** Sachin Kahandal
-- **Last reviewed:** 2026-05-31
+- **Last reviewed:** 2026-05-31 (modernization pass — see ADR-004…011)
 
 ---
 
@@ -118,7 +118,8 @@ Financial figures are largely returned as strings straight from HTML/JSON; `mktC
 use small nested dicts like `{'in': 'Cr', 'value': ...}`.
 - **Why:** Matches scraping output; avoids lossy/locale-dependent number parsing.
 - **Implication:** Callers convert to numbers themselves. Keep return shapes stable —
-  consumers depend on exact key names.
+  consumers depend on exact key names. *(Exception: `analysis()` pros/cons are now
+  `list[str]`, not a string — see ADR-004.)*
 
 ### D9 — Synchronous, single-attempt I/O (no retries, no timeouts today)
 - **Why:** Simplest possible implementation.
@@ -128,12 +129,16 @@ use small nested dicts like `{'in': 'Cr', 'value': ...}`.
 ### D10 — Dependencies: bs4, requests, pandas, html5lib, lxml (loose `>=` pins)
 - **Why:** Scraping stack (bs4/lxml/html5lib) + pandas for tabular statement parsing.
 - **Implication:** Loose pins (e.g. `bs4>=0.0.1`) are intentionally permissive but risky.
-  Tightening them is encouraged but is a logged decision (Q3).
+  Tightening them is encouraged but is a logged decision (Q3). *(Done — pins tightened and
+  `bs4` shim replaced by `beautifulsoup4`; see ADR-005. Q3 resolved.)*
 
-### D11 — No test suite, no type hints today
-- **Why:** Historical — the project started as a quick educational tool in 2023.
-- **Implication:** This is a known gap, not an intentional preference. New code *should*
-  add tests where practical (see Q4). Document any testing approach you adopt below.
+### D11 — Test suite and type hints (was: none) — UPDATED
+- **Why:** Originally a quick 2023 educational tool with neither.
+- **Now:** A pytest suite (offline replayed fixtures + live contract tests, ADR-008) and full
+  type hints with a `py.typed` marker (ADR-007) exist; CI enforces them (ADR-009). Q4/Q5
+  resolved.
+- **Implication:** New functions **must** add a fixture + unit test (and a contract anchor if
+  they scrape HTML/JSON) and carry type hints. ruff/mypy/pytest must stay green.
 
 ---
 
@@ -173,6 +178,11 @@ Resolve these by adding a Decision Log entry when the time comes — don't decid
 Gaps between bselib's current packaging/tooling (legacy `setup.py` + `setup.cfg`, ~2019 era)
 and a modern (2024–2026) Python package. Ordered by **importance** — do the higher tiers first;
 each higher tier de-risks the ones below it. When you act on an item, log an ADR and tick it here.
+
+> **Status (2026-05-31):** Tiers 1–3 are **done** except Tier 1 #3 (request timeouts/retries,
+> Q1 — still open). Tier 4: src layout (#13), CHANGELOG, SECURITY and Dependabot (#15) done;
+> **release automation / git tags / PyPI Trusted Publishing (#12) and CONTRIBUTING (#14) remain
+> open**, as do all of Tier 5. See ADR-004…011.
 
 ### Tier 0 — Does it still work? (verification) — ✅ DONE 2026-05-31
 
@@ -265,6 +275,107 @@ decision (Section 3) or convention (Section 4) if it changes the contract.
 ## Decision Log
 
 <!-- Add new decisions here, newest first, using the template in Section 6. -->
+
+### ADR-011 — Documentation: badges, quickstart, CHANGELOG, SECURITY
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** The README had no badges, an outdated dependency list (`bs4`), and only a
+  "see the docs" pointer; there was no changelog or security policy.
+- **Decision:** Add CI/coverage/PyPI/Python/license badges, a runnable quickstart and an API
+  table to the README; add a Keep-a-Changelog `CHANGELOG.md` and a `SECURITY.md` with private
+  vulnerability reporting.
+- **Reason:** Standard discoverability/hygiene for a public package; cheap and high-signal.
+- **Consequences:** `README.md`, `CHANGELOG.md`, `SECURITY.md`. Badges assume the repo slug
+  `Sachin-Kahandal/bselib` and a Codecov project; some render only once CI/PyPI/Codecov exist.
+
+### ADR-010 — pre-commit hooks
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** Lint/format/type errors were only caught in CI, after pushing.
+- **Decision:** Add `.pre-commit-config.yaml` running ruff, ruff-format and mypy (plus basic
+  hygiene hooks) locally. Opt-in via `uvx pre-commit install`.
+- **Reason:** Tightens the feedback loop; mirrors the CI checks exactly.
+- **Consequences:** `.pre-commit-config.yaml`. Hook versions need occasional bumps
+  (Dependabot does not yet manage them here).
+
+### ADR-009 — CI on GitHub Actions + Dependabot
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** No CI existed (Tier 1 #2 / Q4), so nothing enforced that tests/lint passed.
+- **Decision:** Add a CI workflow with a lint+type-check job and a Python 3.9–3.13 test
+  matrix, all via uv with `--frozen` installs; live tests are deselected by default so CI is
+  network-free. Add Dependabot for the uv lockfile and GitHub Actions.
+- **Reason:** Makes the test suite actually protective; matrix guards the supported versions.
+- **Consequences:** `.github/workflows/ci.yml`, `.github/dependabot.yml`. Coverage upload
+  assumes a Codecov project. Release automation / PyPI Trusted Publishing is still pending
+  (Tier 4 #12).
+
+### ADR-008 — Test suite with replayed fixtures + live contract tests
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** No tests existed (D11 / Q4). Because every function scrapes live sites, the
+  library rotted silently when an upstream changed — exactly how ADR-003's bugs hid.
+- **Decision:** Add pytest tests that are offline by default: an autouse fixture replays
+  per-endpoint responses saved under `tests/fixtures/` (captured live for Reliance, 500325).
+  Add **contract tests** that assert each fixture still contains the selectors/keys its parser
+  needs (offline) and that the real endpoints still match them (`-m live`). Use a transparent
+  `monkeypatch` router rather than a mocking library, since most calls chain `getId` →
+  endpoint. `pandas.read_html` is patched directly (it bypasses `requests`).
+- **Reason:** Deterministic, isolated, CI-safe tests that *also* detect upstream drift — the
+  one failure mode that matters most for a scraper. (The pros/cons fix in ADR-004 was found
+  this way.)
+- **Consequences:** `tests/`, `tests/fixtures/`. New endpoints should add a fixture, a unit
+  test and (for scraped HTML/JSON) a contract anchor. Updates D11.
+
+### ADR-007 — Type hints + mypy + py.typed
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** No type hints (D11 / Q5); consumers got no type information.
+- **Decision:** Annotate the `BSE` facade and every module function (`int | str` inputs,
+  `dict[str, Any]` / tuple returns), enable strict-ish mypy, and ship a `py.typed` marker.
+  Use `from __future__ import annotations` so 3.10-style unions work on 3.9. mypy targets
+  3.10 (its floor); ruff's `py39` target enforces real 3.9 runtime compatibility.
+- **Reason:** Catches shape errors and documents the API without changing behavior.
+- **Consequences:** All modules, `py.typed`, `[tool.mypy]`. bs4/pandas union return types
+  (`Tag | None`, multi-valued attrs, `read_html` keys) are guarded/cast at call sites.
+
+### ADR-006 — Ruff for lint and format
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** No linter or formatter; inconsistent style and latent issues (bare excepts).
+- **Decision:** Adopt ruff for both lint and format, configured in `pyproject.toml`
+  (E/W/F/I/UP/B/C4/SIM). Replace bare `except:` with `except Exception:` so
+  KeyboardInterrupt/SystemExit propagate while keeping the D3 sentinel-dict contract.
+- **Reason:** One fast tool replaces flake8+isort+black; behavior preserved.
+- **Consequences:** All modules, `[tool.ruff]`. CI and pre-commit enforce it.
+
+### ADR-005 — Modern packaging: pyproject + uv + src layout + pinned deps
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** Legacy `setup.py`/`setup.cfg` with a typo'd `ducumentation=` key, dead
+  2.7/3.5–3.7 classifiers, loose pins (`bs4>=0.0.1`), no lockfile, and a flat layout that lets
+  tests import the working dir (Tier 2 #4–7, Tier 4 #13, Q3).
+- **Decision:** Replace with PEP 621 `pyproject.toml` (hatchling backend) managed by uv;
+  `requires-python = ">=3.9"`; move the package to `src/bselib/`; single-source the version via
+  `importlib.metadata`; tighten pins (`beautifulsoup4>=4.9,<5`, plus floors/caps on
+  requests/pandas/lxml/html5lib); commit `uv.lock`.
+- **Reason:** Declarative, reproducible, standards-based packaging; src layout prevents
+  accidental local imports during tests.
+- **Consequences:** `pyproject.toml`, `uv.lock`, `src/` move; removed `setup.py`/`setup.cfg`.
+  Resolves Q3. Updates D10. Release/PyPI publishing remains a follow-up (Tier 4 #12).
+
+### ADR-004 — Repair analysis pros/cons against Screener's new markup
+- **Date:** 2026-05-31
+- **Status:** Accepted
+- **Context:** Screener renamed its pros/cons containers from `div.success` / `div.warning`
+  to `div.pros` / `div.cons`, so `analysis()` silently returned empty pros/cons. Found by the
+  new contract test (ADR-008).
+- **Decision:** Read the bullet `<li>` items from `div.pros` / `div.cons` and return them as a
+  `list[str]` instead of the previous heading-polluted single string.
+- **Reason:** Smallest correct fix; a list of bullets is cleaner than a concatenated string.
+- **Consequences:** `bselib/analysis.py`. **Return-shape change** to `analysis()`'s `pros`/
+  `cons` (string → `list[str]`); callers must adapt. Continuation of the ADR-001/002/003
+  "upstream changed its markup → repair the parser" pattern. Updates D8.
 
 ### ADR-003 — Repair stale parsers against still-live endpoints
 - **Date:** 2026-05-31
