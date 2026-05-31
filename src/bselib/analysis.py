@@ -50,13 +50,15 @@ def analysis(script_code: int | str) -> dict[str, Any]:
         res = requests.get(screener_url, headers=headers)
         soup = BeautifulSoup(res.text, "lxml")
 
-        pros, cons = [], []
-        con = soup.select("div.warning")
-        pro = soup.select("div.success")
-        for tag in con:
-            cons = tag.text.strip().replace("Cons:", "").replace("\n", " ")
-        for tag in pro:
-            pros = tag.text.strip().replace("\n", " ").replace("Pros:", "")
+        # Screener renamed its pros/cons containers from div.success / div.warning
+        # to div.pros / div.cons, each a heading followed by an <li> bullet list.
+        # Return the bullets as a list so the heading word isn't smuggled into the text.
+        def _bullets(css: str) -> list[str]:
+            block = soup.select_one(css)
+            return [" ".join(li.get_text().split()) for li in block.select("li")] if block else []
+
+        pros = _bullets("div.pros")
+        cons = _bullets("div.cons")
         # getting all data in a dictionary
         data = {
             "value_analysis": value_analysis,
