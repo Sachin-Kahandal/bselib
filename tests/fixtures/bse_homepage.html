@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="HandheldFriendly" content="true" /><meta name="MobileOptimized" content="width" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	BSE - Equity
+</title><link href="https://m.bseindia.com/include/css/style.css" rel="stylesheet" type="text/css" /><link href="https://m.bseindia.com/include/css/glossy.css" rel="stylesheet" type="text/css" />
+    <script src="include/js/jquery.min.js" type="text/javascript"></script>
+    <script language="javascript" nonce="page1a2c3d4f5g6">
+
+        //********For accept query string value***********
+        function getData() {
+            var requestUrl = "https://m.bseindia.com/nocache/bgcookies.aspx";
+            $("#divrecent").load(requestUrl);
+        }
+
+
+
+        function opensw(scrpt, flg) {
+
+            if (flg == "0") {
+
+                window.open("https://m.bseindia.com/StockReach.aspx?scripcd=" + scrpt, "_parent");
+            }
+            else if (flg == "1") {
+                window.open("https://m.bseindia.com/StockReach.aspx?scripcd=" + scrpt + "&id=D", "_parent");
+            }
+            else if (flg == "2") {
+                window.open("https://m.bseindia.com/stockCurrency.aspx?scripcd=" + scrpt, "_parent");
+            }
+            else if (flg == "3") {
+                window.open("https://m.bseindia.com/stockCurrency.aspx?flag=IRD&scripcd=" + scrpt, "_parent");
+            }
+        }
+        $(document).ready(function () {
+            getData();
+        });
+
+    </script>
+</head>
+<body leftmargin="1" rightmargin="1" topmargin="0" marginwidth="0" marginheight="0" onload="javascript:getData();">
+    <form method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=QIevk-htgPYn9hnuqt2dJ3QfZ5XkMI5e7DgVNONVGRAqYyL1or0GAZEDKpEGSsg31HVkM5HGAmWuq1qRllV61HswkYvSsJnDqwC5xYAMBW01&amp;t=638901724312636832" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=wR9DASatsL-Yu6gTZK0LO8XV9MP6_tI_TihzOd5NmxV7Fot2DBnJrrbDb0LAif_1_ep5nDgj46ZxHzhqY4iQ7uvThA2-9YtDfKf8yiGaaa81&amp;t=638901724312636832" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="zAyhfriYghMq8X3C9i9a3XeR9I+tI1FSef6Y1QmkzQfMOAuVGSfCtwXXksi77wSP5yxnlQCXauS/oeC9WA/i8M75Z5fP+BgJ4guzaYVeU6giIq9YLSThgIY4ZXwIdaEYAl+AjRf0hSsNGik6YjqPDjfBbAlY6HblTU75F/ro5zEnaozagR6B/a6rlC7lHwv4ha+0JEAu9Nhq8mACa676XoF2dG2InVo111AZ2BTibAGTVDB9md1q3eCKGIvDCl2SHtO/NSzAwZBX4HTizizEDpg5WIY5rfjv82Tn8qzAkH8+xYgCc11O/vJ8/MCUOxqoyl6KndRB6/c3zb3d5VefV9Z++W9BUrKjSqDR/wGfFL4=" />
+</div>
+        <input type="hidden" name="hdnIDT" id="hdnIDT" value="29 May 2026" />
+        <input type="hidden" name="hdnGDT" id="hdnGDT" value="29 May 26 | 16:00" />
+        <input type="hidden" name="hdnGSS" id="hdnGSS" />
+        <input type="hidden" name="hdnLDT" id="hdnLDT" value="29 May 2026" />
+        <input type="hidden" name="hdnLSS" id="hdnLSS" />
+        <input type="hidden" name="hdnMDT" id="hdnMDT" />
+        <input type="hidden" name="hdnMSS" id="hdnMSS" value="29 May 26 | 16:00" />
+
+        <input type="hidden" name="hdnTRDate" id="hdnTRDate" />
+
+        <div id="wrap">
+
+
+            <div>
+                
+<link href="include/css/style.css" rel="stylesheet" type="text/css" />
+<link href="include/css/glossy.css" rel="stylesheet" type="text/css" />
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-27569176-8" integrity="sha384-NiN1Dzazl0xMRddrFlnhI7Kpdf0hXTiW9mNeuQ1NPS/1Nr8ZRBKpgh6Q/4qgxGS0" crossorigin="anonymous"></script>
+<script nonce="uC1a2c3d4f5g6">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-27569176-8');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->	
+	
+
+<!--Mpulse Akamai -->
+    <script type="text/javascript" nonce="uC2a2c3d4f5g6">
+        (function () {
+            // Boomerang Loader Snippet version 10
+            if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
+                return;
+            }
+
+            window.BOOMR = window.BOOMR || {};
+            window.BOOMR.snippetExecuted = true;
+
+            var dom, doc, where, iframe = document.createElement("iframe"), win = window;
+
+            function boomerangSaveLoadTime(e) {
+                win.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+            }
+
+            if (win.addEventListener) {
+                win.addEventListener("load", boomerangSaveLoadTime, false);
+            } else if (win.attachEvent) {
+                win.attachEvent("onload", boomerangSaveLoadTime);
+            }
+
+            iframe.src = "javascript:void(0)";
+            iframe.title = "";
+            iframe.role = "presentation";
+            (iframe.frameElement || iframe).style.cssText = "width:0;height:0;border:0;display:none;";
+            where = document.getElementsByTagName("script")[0];
+            where.parentNode.insertBefore(iframe, where);
+
+            try {
+                doc = iframe.contentWindow.document;
+            } catch (e) {
+                dom = document.domain;
+                iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+                doc = iframe.contentWindow.document;
+            }
+
+            doc.open()._l = function () {
+                var js = this.createElement("script");
+                if (dom) {
+                    this.domain = dom;
+                }
+                js.id = "boomr-if-as";
+                js.src = "https://s.go-mpulse.net/boomerang/" + "DZP23-UEMEM-TZZHS-5T9A2-7WLHC";
+                BOOMR_lstart = new Date().getTime();
+                this.body.appendChild(js);
+            };
+            doc.write('<bo' + 'dy onload="document._l();">');
+            doc.close();
+        })();
+</script>
+
+	<!-- End----Mpulse Akamai -->
+	
+	 <script nonce="uC3a2c3d4f5g6">
+    function searchKeyPress(e)
+    {
+        // look for window.event in case event isn't passed in
+        e = e || window.event;
+        if (e.keyCode == 13)
+        {
+        
+            document.getElementById('UcHeaderMenu1_btnGo').click();
+            return false;
+        }
+        return true;
+    }
+    </script>
+
+<!--google analytics-->
+
+
+<!--toparea -->
+
+<div class="toparea">
+
+<div class="logoarea"><a href="Index.aspx"><img src="include/images/bselogo.gif" alt="" border="0"  /></a></div>
+
+
+<div class="rightarea">
+
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><a href="https://www.bseindia.com" class="logintext">Desktop Site</a></td>
+    <td width="10" align="center" class="logintext">|</td>
+    <td align="right" class="logintext">
+    
+    
+    <input type="submit" name="UcHeaderMenu1$lbtnlogin" value="Login" id="UcHeaderMenu1_lbtnlogin" class="logintext" />
+    </td>
+  </tr>
+  <tr><td colspan="3" height="2"></td></tr>
+  <tr>
+    <td align="right" ><strong id="UcHeaderMenu1_Opendate">29 May 26 | 16:00</strong></td>
+    <td align="center">|</td>
+    <td id="UcHeaderMenu1_tdOCP" align="center" class="opentext">Close</td>
+
+  </tr>
+</table>
+
+
+</div>
+
+
+</div>
+<!--toparea -->
+<!--navigation -->
+
+<div class="navigationarea">
+
+<table width="100%" border="0" bgcolor="#909090" height="20" cellspacing="0" cellpadding="0">
+  <tr>
+    
+    <td align="center" valign="middle"><a href="index.aspx"  class="navlink">Equity</a></td>
+    <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    
+    <td align="center" valign="middle"><a href="smemarket.aspx" class="navlink">SME</a></td>
+    <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    
+    <td align="center" valign="middle"><a href="derivatives.aspx" class="navlink">Eq Drv</a></td>
+     <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    <td align="center" valign="middle"><a href="currency.aspx" class="navlink">Currency</a></td>
+      <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+       <td align="center" valign="middle"><a href="/commodity.aspx" class="navlink">Commodity</a></td>
+     <td width="1px" align="center" valign="middle" bgcolor="#ffffff"></td>
+    <td align="center" valign="middle"><a href="corporates.aspx" class="navlink">Corporates</a></td>
+     <td id="UcHeaderMenu1_tdIpx" width="1px" style="display:none" align="center" valign="middle" bgcolor="#ffffff"></td>
+
+    <td id="UcHeaderMenu1_tdwlist" align="center" style="display:none" valign="middle"><a href="watchlist.aspx" class="navlink">Watch List</a></td>
+
+  </tr>
+</table>
+</div>
+
+<!--navigation -->
+<!--getquotearea -->
+<div class="getquotearea" >
+<span class="getquottext">Get Quote</span>
+<span><input name="UcHeaderMenu1$txtGetQuote" type="text" maxlength="10" id="UcHeaderMenu1_txtGetQuote" class="textbox" onkeypress="return searchKeyPress(event);" />
+      <span id="UcHeaderMenu1_reqGetQuote" style="display:inline-block;width:1px;visibility:hidden;">*</span>
+    
+</span>
+<span><input type="submit" name="UcHeaderMenu1$btnGo" value="Go" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;UcHeaderMenu1$btnGo&quot;, &quot;&quot;, true, &quot;GO&quot;, &quot;&quot;, false, false))" id="UcHeaderMenu1_btnGo" class="gobutton" onfocus="btnGo_Click" /></span>
+        
+        
+        <span style="margin-top:5px; float:right;">
+        
+         <table align="right" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td><a href="ncp.aspx" class="logintext">Notices</a></td>
+    <td width="20" align="center" class="logintext">|</td>
+    <td><a href="Index.aspx" id="UcHeaderMenu1_arefresh"><img src="include/images/refresh.gif" vspace="0" alt="" border="0"  /></a></td>
+    </tr>
+    
+    </table>
+            
+        </span>
+        <span id="UcHeaderMenu1_revgetQuote" style="display:inline-block;color:Green;width:1px;visibility:hidden;"></span>
+    <span id="UcHeaderMenu1_revgetQuote1"></span>
+
+</div>
+
+<!--getquotearea -->
+<!--sensexarea -->
+<div class="sensexarea">
+<div style="margin-left:3px; margin-right:3px; margin-top:5px;">
+<table  border="0"  align="left" width="100%"   cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="middle" align="left"><a href="Sensex.aspx" style="text-decoration:none;"> <font color="#0089d0" style="font-size:11px"><b>BSE SENSEX</b></font></a></td>
+    <td id="UcHeaderMenu1_sensexLtp" align="left" class="sensextext">74,775.74</td>
+
+    <td id="UcHeaderMenu1_imgPerChange" align="center"><img src='include/images/reddown.gif' alt='' /></td>
+
+    <td id="UcHeaderMenu1_sensexChange" align="right" class="sensextext">-1,092.06</td>
+
+    <td id="UcHeaderMenu1_sensexPerChange" align="right" class="sensextext">-1.44 %</td>
+
+
+  </tr>
+</table>   
+</div>
+
+</div>
+<!--sensexarea -->
+
+
+<!--gemini integration-->
+	
+	<script type="text/javascript" nonce='uC4a2c3d4f5g6'> 
+		ci = "0002320" 
+		errList = []; 
+		window.addEventListener('error',function(e){var obj={};try 
+		{obj['f']=(e.filename).replace("|","~$");obj['m']=(e.message);obj['l']=(e.lineno);errList.push(obj);} catch(ex){}}); 
+	</script> 
+	
+	
+	
+<!--gemini integration-->
+
+            </div>
+
+
+            <div class="menuarea">
+
+                <div class="glossymenu">
+                    
+
+
+
+
+                    <span class="menuitem submenuheader">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50%">
+                                    
+                                    <span class="graphtext"><a href="IndicesView_New.aspx" target="_self">Indices</a></span>
+                                </td>
+                                
+                                <td align="right" width="50%">
+                                    <span id="inddate" class="graphtext">As on 29 May 26 | 16:00</span>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+
+
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#d6d6d6">
+
+
+                                            <div id="divIndex"><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td align='center' class='indextabhead'><strong>Index</strong></td><td align='center' class='indextabhead'><strong>Current</strong></td><td align='center' class='indextabhead'><strong>Change</strong></td><td align='center' class='indextabhead'><strong>% Change</strong></td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='sensex_new.aspx?Scripflag=16' class='announcelink'>BSE SENSEX</a></td><td class='TTRow_right' >74,775.74</td><td class='TTRow_right' >-1,092.06</td><td class='TTRow_right' >-1.44</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='sensex_new.aspx?Scripflag=137' class='announcelink'>BSE FOCUSED MIDCAP</a></td><td class='TTRow_right' >24,595.45</td><td class='TTRow_right' >-265.43</td><td class='TTRow_right' >-1.07</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='sensex_new.aspx?Scripflag=98' class='announcelink'>BSE SENSEX 50</a></td><td class='TTRow_right' >24,625.98</td><td class='TTRow_right' >-377.54</td><td class='TTRow_right' >-1.51</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='sensex_new.aspx?Scripflag=99' class='announcelink'>BSE SENSEX Next 50</a></td><td class='TTRow_right' >84,785.19</td><td class='TTRow_right' >-1,086.15</td><td class='TTRow_right' >-1.26</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='sensex_new.aspx?Scripflag=100' class='announcelink'>BSE Bharat 22 Index</a></td><td class='TTRow_right' >9,201.26</td><td class='TTRow_right' >-145.56</td><td class='TTRow_right' >-1.56</td></tr></table></div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!----strat code------>
+
+                    
+
+                    <!------endcode------>
+                    
+
+
+                    
+
+                    <span class="menuitem submenuheader">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50%">Gainers
+
+                                </td>
+                                
+                                <td align="right" width="50%">
+                                    <span id="gdate" class="graphtext">As on 29 May 26 | 16:00</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#d6d6d6">
+
+
+                                            <div id="divGainers"><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td align='center' class='indextabhead'><strong>Security</strong></td><td align='center' class='indextabhead'><strong>LTP</strong></td><td align='center' class='indextabhead'><strong>Change</strong></td><td align='center' class='indextabhead'><strong>% Change</strong></td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=543434' class='announcelink'>SUPRIYA</a></td><td class='TTRow_right' >968.70</td><td class='TTRow_right' >161.45</td><td class='TTRow_right' >20.00</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=543945' class='announcelink'>NETWEB</a></td><td class='TTRow_right' >4,696.50</td><td class='TTRow_right' >626.50</td><td class='TTRow_right' >15.39</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=532300' class='announcelink'>WOCKPHARMA</a></td><td class='TTRow_right' >2,030.70</td><td class='TTRow_right' >259.05</td><td class='TTRow_right' >14.62</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=530517' class='announcelink'>RELAXO</a></td><td class='TTRow_right' >343.65</td><td class='TTRow_right' >41.80</td><td class='TTRow_right' >13.85</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=527001' class='announcelink'>ASHAPURMIN</a></td><td class='TTRow_right' >738.65</td><td class='TTRow_right' >84.00</td><td class='TTRow_right' >12.83</td></tr></table></div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <span class="menuitem submenuheader">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50%">Losers
+
+                                </td>
+                                
+                                <td align="right" width="50%">
+                                    <span id="ldate" class="graphtext">As on 29 May 26 | 16:00</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#d6d6d6">
+
+
+                                            <div id="divLosers"><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td align='center' class='indextabhead'><strong>Security</strong></td><td align='center' class='indextabhead'><strong>LTP</strong></td><td align='center' class='indextabhead'><strong>Change</strong></td><td align='center' class='indextabhead'><strong>% Change</strong></td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=532848' class='announcelink'>DELTACORP</a></td><td class='TTRow_right' >69.12</td><td class='TTRow_right' >-11.87</td><td class='TTRow_right' >-14.66</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=524816' class='announcelink'>NATCOPHARM</a></td><td class='TTRow_right' >1,016.75</td><td class='TTRow_right' >-158.85</td><td class='TTRow_right' >-13.51</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=533033' class='announcelink'>ISGEC</a></td><td class='TTRow_right' >929.40</td><td class='TTRow_right' >-103.35</td><td class='TTRow_right' >-10.01</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=544081' class='announcelink'>JYOTICNC</a></td><td class='TTRow_right' >596.55</td><td class='TTRow_right' >-60.40</td><td class='TTRow_right' >-9.19</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' ><a href='StockReach.aspx?scripcd=522205' class='announcelink'>PRAJIND</a></td><td class='TTRow_right' >352.30</td><td class='TTRow_right' >-31.65</td><td class='TTRow_right' >-8.24</td></tr></table></div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+                    
+
+
+
+
+                    
+
+                    <span class="menuitem submenuheader">
+                        <table class="menuitem submenuheader" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50%">Equity Market Statistics
+                                </td>
+                                
+                                <td align="right" width="50%">
+                                    <span id="msdate" class="graphtext">As on 29 May 26 | 16:00</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#d6d6d6">
+
+
+                                            <div id="divmktcap"><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td class='TTRow_left' style='height:25px;'>Market Capitalization of BSE Listed Companies (Rs.Cr.)</td><td class='TTRow_right'>4,64,97,815</td></tr><tr><td class='TTRow_left'>No of Cos with Listed Equity Capital</td><td class='TTRow_right'>5,129</td></tr><tr><td class='TTRow_left'>No of Cos with Listed Equity Capital - Suspended</td><td class='TTRow_right'>508</td></tr><tr><td class='TTRow_left'>No of Cos with Listed Equity Capital - Available For Trade</td><td class='TTRow_right'>4,621</td></tr><tr><td class='TTRow_left'>No. of Companies Traded</td><td class='TTRow_right'>4,463</td></tr><tr><td class='TTRow_left'>Total No.of Shares Traded (Lacs)</td><td class='TTRow_right'>8,726.52</td></tr><tr> <td colspan='2'><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td align='center' class='indextabhead'><strong></strong></td><td align='center' class='indextabhead'><strong>No. of Security</strong></td><td align='center' class='indextabhead'><strong>% of Total</strong></td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' >Advances</td><td class='TTRow_right' >1611</td><td class='TTRow_right' >36.10</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' >Declines</td><td class='TTRow_right' >2673</td><td class='TTRow_right' >59.89</td></tr><tr><td class='TTRow_left' height='25' align='left' style='padding-left:5px;' valign='middle' >Unchanged</td><td class='TTRow_right' >179</td><td class='TTRow_right' >4.01</td></tr></table></tr> </td><tr><td class='TTRow_left'>Total No. of Orders</td><td class='TTRow_right'>5,11,31,33,277</td></tr><tr><td class='TTRow_left'>No.of Trades</td><td class='TTRow_right'>1,50,02,979</td></tr><tr><td class='TTRow_left'>Registered Investors</td><td class='TTRow_right'>25,23,04,807</td></tr><tr><td class='TTRow_left'>Median Response Time ( &#181;S )</td><td class='TTRow_right'>3</td></tr></table></div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+
+
+                    <span class="menuitem submenuheader">
+                        <table class="menuitem submenuheader" width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50%">Market Turnover
+                                </td>
+                                
+                                <td align="right" width="50%">
+                                    <span id="mdate" class="graphtext"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+
+
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#d6d6d6">
+
+                                            <div id="divMktTurns"><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr> <td colspan='2'><table width='100%' border='0' cellspacing='1' cellpadding='0'><tr><td align='center' class='indextabhead' ><strong>Products</strong></td><td  align='center' class='indextabhead'><strong>Contracts</strong></td><td  align='center' class='indextabhead'><strong>OI</strong></td><td align='center' class='indextabhead'><strong>T/O Notional (Cr.)</strong></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>Equity</td><td  class='indextabhead' align='right' colspan='2'>29/05/26 | 16:00</td></tr><tr><td class='TTRow_left'  style='font-weight:bold;'></td><td class='TTRow_right' ><b>88,13,51,094</b></td><td class='TTRow_right' ><b>-</b></td><td class='TTRow_right' ><b>12,770.80</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>Debt</td><td  class='indextabhead' align='right' colspan='2'>29/05/26 | 17:10</td></tr><tr><td class='TTRow_left'  style='font-weight:bold;'></td><td class='TTRow_right' >-</td><td class='TTRow_right' >-</td><td class='TTRow_right' ><b>5,193.17</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>Derivatives</td><td  class='indextabhead' align='right' colspan='2'>29/05/26 | 15:30</td></tr><tr><td   class='TTRow_left' style='padding-left:10px;'>Index Future</td><td   class='TTRow_right'>3,469</td><td  class='TTRow_right'>5,038</td><td  class='TTRow_right'>526.71</td></tr><tr><td  class='TTRow_left' style='padding-left:10px;'>Index Option</td><td   class='TTRow_right'>1,95,62,426</td><td  class='TTRow_right'>9,81,760</td><td  class='TTRow_right'>29,75,704.30</td></tr><tr><td   class='TTRow_left' style='padding-left:10px;'>Equity Future</td><td   class='TTRow_right'>7</td><td  class='TTRow_right'>3</td><td  class='TTRow_right'>0.43</td></tr><tr><td  class='TTRow_left' style='padding-left:10px;'>Equity Option</td><td   class='TTRow_right'>21</td><td  class='TTRow_right'>28</td><td  class='TTRow_right'>1.35</td></tr><tr><td class='TTRow_right'  style='text-align:right;'><b>Total</b></td><td class='TTRow_right'><b>1,95,65,923</b></td><td class='TTRow_right' ><b>9,86,829</b></td><td class='TTRow_right' ><b>29,76,232.79</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>Currency Derivatives</td><td  class='indextabhead' align='right' colspan='2'>-</td></tr><tr><td class='TTRow_left'   style='padding-left:10px;'>Currency Futures</td><td class='TTRow_right' >-</td><td class='TTRow_right' >-</td><td class='TTRow_right'>-</td></tr><tr><td class='TTRow_left'  style='padding-left:10px;'>Currency Options</td><td class='TTRow_right' >-</td><td class='TTRow_right' >-</td><td class='TTRow_right'>-</td></tr><tr><td class='TTRow_right'  style='text-align:right;'><b>Total</b></td><td class='TTRow_right'><b>-</b></td><td class='TTRow_right' ><b>-</b></td><td class='TTRow_right'><b>-</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>Interest Rate Derivatives</td><td  class='indextabhead' align='right' colspan='2'>-</td></tr><tr><td class='TTRow_left' style='padding-left:10px;'><b></b></td><td class='TTRow_right'><b>-</b></td><td class='TTRow_right'><b>-</b></td><td class='TTRow_right'><b>-</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>Commodity Derivatives</td><td  class='indextabhead' align='right' colspan='2'>-</td></tr><tr><td class='TTRow_left' style='padding-left:10px;'><b></b></td><td class='TTRow_right'><b>-</b></td><td class='TTRow_right'><b>-</b></td><td class='TTRow_right'><b>-</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>BSE StAR MF</td><td  class='indextabhead' align='right' colspan='2'>29/05/26 | 15:10</td></tr><tr><td class='TTRow_left' style='padding-left:10px;'></td><td class='TTRow_right'><b>31,01,139</b></td><td class='TTRow_right'><b>-</b></td><td class='TTRow_right'><b>3,790.16</b></td></tr><tr><td class='indextabhead' align='left' colspan='2'  style='font-weight:bold;'>India International Exchange</td><td  class='indextabhead' align='right' colspan='2'>29/05/26 | 17:25</td></tr><tr><td class='TTRow_left' style='padding-left:10px;'></td><td class='TTRow_right'><b>190</b></td><td class='TTRow_right'><b>32</b></td><td class='TTRow_right'><b>138.14</b></td></tr><tr><td align='right' class='indextabhead'  style='text-align:right;'><b>Total</b></td><td align='right' class='indextabhead'><b>90,40,18,346</b></td><td align='right' class='indextabhead'><b>9,86,861</b></td><td align='right' class='indextabhead'><b>29,84,264.92</b></td></tr><tr></tr></table></tr> </td></tr></table></div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!--sentifi start-->
+                 
+                    <!--sentifi end-->
+
+
+
+                    <a class="menuitem submenuheader" href="Turnover.aspx">Turnover Toppers</a>
+
+                    <a class="menuitem submenuheader" href="52WeekHigh.aspx?id=1" target="_self">52 Week High</a>
+
+                    <a class="menuitem submenuheader" href="52WeekHigh.aspx" target="_self">52 Week Low</a>
+
+                    <!--for recent visited -->
+                    <span class="menuitem submenuheader">Recently Viewed</span>
+                    <div class="submenu">
+                        <ul>
+                            <li>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td bgcolor="#ffffff">
+                                            <div id="divrecent">
+                                            </div>
+                                            
+    
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!--for recent visited -->
+
+                </div>
+
+
+
+
+            </div>
+
+            <!--footerarea -->
+            <div class="footerarea">
+
+                <table width="97%" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td id="tdfooter" colspan="2"><div align="center">Copyright@ 2015. All Rights Reserved. <font color="#0089d0">BSE Ltd.</font>
+
+  </div></td>
+
+
+                    </tr>
+
+
+                    <tr>
+                        <td height="10" colspan="2"></td>
+                    </tr>
+
+                    <tr>
+
+                        <td id="ipadd" width="30%" align="left">(122H)</td>
+
+                        <td align="right" width="70%"><strong id="ist">31 May 26 | 13:59 (IST)</strong></td>
+
+                    </tr>
+                </table>
+
+
+            </div>
+
+            <!--footerarea -->
+
+        </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("UcHeaderMenu1_reqGetQuote"), document.getElementById("UcHeaderMenu1_revgetQuote"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var UcHeaderMenu1_reqGetQuote = document.all ? document.all["UcHeaderMenu1_reqGetQuote"] : document.getElementById("UcHeaderMenu1_reqGetQuote");
+UcHeaderMenu1_reqGetQuote.controltovalidate = "UcHeaderMenu1_txtGetQuote";
+UcHeaderMenu1_reqGetQuote.errormessage = "*";
+UcHeaderMenu1_reqGetQuote.validationGroup = "GO";
+UcHeaderMenu1_reqGetQuote.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+UcHeaderMenu1_reqGetQuote.initialvalue = "";
+var UcHeaderMenu1_revgetQuote = document.all ? document.all["UcHeaderMenu1_revgetQuote"] : document.getElementById("UcHeaderMenu1_revgetQuote");
+UcHeaderMenu1_revgetQuote.controltovalidate = "UcHeaderMenu1_txtGetQuote";
+UcHeaderMenu1_revgetQuote.validationGroup = "GO";
+UcHeaderMenu1_revgetQuote.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+UcHeaderMenu1_revgetQuote.validationexpression = "^[a-zA-Z0-9 ]{1,10}$";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+</body>
+</html>

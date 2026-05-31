@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en" data-critters-container=""><head>
+    <meta charset="utf-8">
+    <title>
+      LIVE Stock/Share Market | Indian Stock/Share Market LIVE | BSE SENSEX | BSE (formerly Bombay Stock
+      Exchange)
+    </title>
+    <meta name="description" content="BSE SENSEX - India's Index the World Tracks. Get live BSE SENSEX quotes. BSE Sensex Heat Map a great tool to track BSE SENSEX stocks. Gainers, losers, volume toppers in BSE SENSEX Stocks. Corporate announcements of BSE SENSEX stocks, Share Market Today | Share Market Live updates. Share Market Live Charts, News, Analysis, IPO News and more. Click here to stay updated and invest wisely!Get all the latest share market and India stock market news and updates on bseindia.com">
+    <meta name="keywords" content="BSE SENSEX, BSE SENSEX Value, BSE SENSEX Heat Map, BSE SENSEX movers, BSE SENSEX volume toppers, BSE SENSEX derivatives, BSE SENSEX F&amp;,O, BSE SENSEX ETFs, BSE SENSEX announcements, BSE SENSEX chart, BSE SENSEX graph, BSE SENSEX performance, BSE SENSEX ups &amp;, downs, BSE SENSEX Market Capitalization, bombay stock exchange, live market watch, Indian stock market, bse, sensex, stock exchange, stock market.">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csp-nonce" content="">
+    <!-- Don't need this here as we manage the CSP from IIS's web.config. Having a csp both here and there can cause clashes and unwanted behaviour -->
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src  https://*.googlesyndication.com  'self';  img-src *.gstatic.com *.google.com 'self' data: chrome-extension-resource storage.googleapis.com pagead2.googlesyndication.com;script-src 'strict-dynamic' 'self' 'nonce-appcomponents123456789'; connect-src * data; style-src 'nonce-appcomponents123456789'  'self' data: chrome-extension-resource:  pagead2.googlesyndication.com     storage.googleapis.com googleads.g.doubleclick.net ajax.googleapis.com; frame-src 'self' data: chrome-extension-resource:;font-src *.gstatic.com *.google.com 'self'      data: chrome-extension-resource: *.gstatic.com *.google.com fonts.googleapis.com; frame-ancestors 'self';      object-src 'none';              media-src * data; base-uri 'self'; "
+    /> -->
+    <link rel="icon" type="image/x-icon" href="/assets/includenew/images/bselogo.png">
+
+    <link rel="dns-prefetch" href="https://api.bseindia.com">
+    <link rel="dns-prefetch" href="https://cdn-pub.sentifi.com">
+    <link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://i.marketsmojo.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link href="https://api.bseindia.com" rel="preconnect">
+    <link href="https://cdn-pub.sentifi.com" rel="preconnect">
+    <link href="https://tpc.googlesyndication.com" rel="preconnect">
+    <link href="https://i.marketsmojo.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://www.google-analytics.com" rel="preconnect">
+    <link href="https://www.googletagmanager.com" rel="preconnect">
+
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5BVSJ278B"></script> -->
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-H5BVSJ278B');
+    </script> -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2VVED3VX1X" nonce="appcomponents123456789"></script>
+    <script nonce="appcomponents123456789">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-2VVED3VX1X');
+    </script>
+    <script ngcspnonce="appcomponents123456789" src="env.js" nonce="appcomponents123456789"></script>
+  <style nonce="appcomponents123456789">:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-primary:#2f89fc;--bs-secondary:#ff4917;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#edf1fc;--bs-dark:#17224d;--bs-font-sans-serif:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--bs-font-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0))}*,*:before,*:after{box-sizing:border-box}@media (prefers-reduced-motion: no-preference){:root{scroll-behavior:smooth}}@font-face{font-family:myFirstFont;src:url("./media/poppins-font-style-LRFPYWBC.css")}body{margin:0;font-family:myFirstFont;font-size:14px;font-weight:400;line-height:1.5;color:#000;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}@font-face{font-family:Poppins;src:url("./media/Poppins-Thin-MBJSJ55P.ttf") format("truetype");font-weight:100}@font-face{font-family:Poppins;src:url("./media/Poppins-ThinItalic-56ERCFD6.ttf") format("truetype");font-weight:100;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-ExtraLight-SEBPXBAV.ttf") format("truetype");font-weight:200}@font-face{font-family:Poppins;src:url("./media/Poppins-ExtraLightItalic-FTSQIRMY.ttf") format("truetype");font-weight:200;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-Light-RMQAEPUP.ttf") format("truetype");font-weight:300}@font-face{font-family:Poppins;src:url("./media/Poppins-LightItalic-VTL7PH46.ttf") format("truetype");font-weight:300;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-Regular-JNHL4IDV.ttf") format("truetype");font-weight:400}@font-face{font-family:Poppins;src:url("./media/Poppins-Medium-UUWQX4EV.ttf") format("truetype");font-weight:500}@font-face{font-family:Poppins;src:url("./media/Poppins-MediumItalic-GSTDJYPJ.ttf") format("truetype");font-weight:500;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-SemiBold-TBISX6G2.ttf") format("truetype");font-weight:600}@font-face{font-family:Poppins;src:url("./media/Poppins-SemiBoldItalic-KATDLEJV.ttf") format("truetype");font-weight:600;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-Bold-QAA2AGZS.ttf") format("truetype");font-weight:700}@font-face{font-family:Poppins;src:url("./media/Poppins-BoldItalic-DIK4LTR6.ttf") format("truetype");font-weight:700;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-ExtraBold-OVZKTNJI.ttf") format("truetype");font-weight:800}@font-face{font-family:Poppins;src:url("./media/Poppins-ExtraBoldItalic-SZLJQHPN.ttf") format("truetype");font-weight:800;font-style:italic}@font-face{font-family:Poppins;src:url("./media/Poppins-Black-U4YX6GHD.ttf") format("truetype");font-weight:900}@font-face{font-family:Poppins;src:url("./media/Poppins-BlackItalic-A4MUAHEW.ttf") format("truetype");font-weight:900;font-style:italic}@-webkit-keyframes fa-beat{0%,90%{-webkit-transform:scale(1);transform:scale(1)}45%{-webkit-transform:scale(var(--fa-beat-scale,1.25));transform:scale(var(--fa-beat-scale,1.25))}}@-webkit-keyframes fa-bounce{0%,to,64%{-webkit-transform:scale(1,1) translateY(0);transform:scale(1) translateY(0)}10%{-webkit-transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9)) translateY(0);transform:scale(var(--fa-bounce-start-scale-x,1.1),var(--fa-bounce-start-scale-y,.9)) translateY(0)}30%{-webkit-transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1)) translateY(var(--fa-bounce-height,-.5em));transform:scale(var(--fa-bounce-jump-scale-x,.9),var(--fa-bounce-jump-scale-y,1.1)) translateY(var(--fa-bounce-height,-.5em))}50%{-webkit-transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95)) translateY(0);transform:scale(var(--fa-bounce-land-scale-x,1.05),var(--fa-bounce-land-scale-y,.95)) translateY(0)}57%{-webkit-transform:scale(1,1) translateY(var(--fa-bounce-rebound,-.125em));transform:scale(1) translateY(var(--fa-bounce-rebound,-.125em))}}@-webkit-keyframes fa-fade{50%{opacity:var(--fa-fade-opacity, .4)}}@-webkit-keyframes fa-beat-fade{0%,to{opacity:var(--fa-beat-fade-opacity, .4);-webkit-transform:scale(1);transform:scale(1)}50%{opacity:1;-webkit-transform:scale(var(--fa-beat-fade-scale,1.125));transform:scale(var(--fa-beat-fade-scale,1.125))}}@-webkit-keyframes fa-flip{50%{-webkit-transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg));transform:rotate3d(var(--fa-flip-x,0),var(--fa-flip-y,1),var(--fa-flip-z,0),var(--fa-flip-angle,-180deg))}}@-webkit-keyframes fa-shake{0%{-webkit-transform:rotate(-15deg);transform:rotate(-15deg)}4%{-webkit-transform:rotate(15deg);transform:rotate(15deg)}24%,8%{-webkit-transform:rotate(-18deg);transform:rotate(-18deg)}12%,28%{-webkit-transform:rotate(18deg);transform:rotate(18deg)}16%{-webkit-transform:rotate(-22deg);transform:rotate(-22deg)}20%{-webkit-transform:rotate(22deg);transform:rotate(22deg)}32%{-webkit-transform:rotate(-12deg);transform:rotate(-12deg)}36%{-webkit-transform:rotate(12deg);transform:rotate(12deg)}to,40%{-webkit-transform:rotate(0);transform:rotate(0)}}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}:root{--fa-style-family-brands:"Font Awesome 6 Brands";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands";--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Free";--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Free"}@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("./media/fa-brands-400-Q5MHU2AU.woff2") format("woff2"),url("./media/fa-brands-400-LUMNIJ6A.ttf") format("truetype")}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url("./media/fa-regular-400-HTG32PIJ.woff2") format("woff2"),url("./media/fa-regular-400-QFECZVGZ.ttf") format("truetype")}@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url("./media/fa-solid-900-BMGMRJW7.woff2") format("woff2"),url("./media/fa-solid-900-NHJRIGXE.ttf") format("truetype")}*{scroll-margin-top:55px}@media (min-width: 1024px){*{scroll-margin-top:100px}}* :focus-visible{outline:2px auto #bc4c10!important;border-radius:.25rem;transition:box-shadow .1s ease-in-out}body{font-family:Poppins,sans-serif!important;font-size:13px}:root{--primary:#2f89fc;--secondary:#ff4917;--light:#edf1fc;--dark:#17224d}:root{--swiper-theme-color:#007aff}:root{--swiper-navigation-size:44px}</style><script nonce="appcomponents123456789">(() => {
+  const CSP_MEDIA_ATTR = 'ngCspMedia';
+  const documentElement = document.documentElement;
+  const listener = (e) => {
+    const target = e.target;
+    if (!target || target.tagName !== 'LINK' || !target.hasAttribute(CSP_MEDIA_ATTR)) {
+     return;
+    }
+    target.media = target.getAttribute(CSP_MEDIA_ATTR);
+    target.removeAttribute(CSP_MEDIA_ATTR);
+    if (!document.head.querySelector(`link[${CSP_MEDIA_ATTR}]`)) {
+      documentElement.removeEventListener('load', listener);
+    }
+  };
+  documentElement.addEventListener('load', listener, true);
+})();</script><link rel="stylesheet" href="/assets/includenew/css/styles-XLRBEG5A.css" media="print" ngcspmedia="all"><noscript><link rel="stylesheet" href="styles-XLRBEG5A.css"></noscript></head>
+  <body>
+    <app ngcspnonce="appcomponents123456789"></app>
+    <app-root></app-root>
+  <link rel="modulepreload" href="/assets/includenew/js/chunk-MFFLFG5Q.js"><script src="/assets/includenew/js/polyfills-MH2GNY63.js" type="module" nonce="appcomponents123456789"></script><script src="/assets/includenew/js/scripts-OXCQKZIU.js" defer="" nonce="appcomponents123456789"></script><script src="/assets/includenew/js/main-4FOYQ265.js" type="module" nonce="appcomponents123456789"></script>
+
+</body></html>
