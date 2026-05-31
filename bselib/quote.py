@@ -1,9 +1,14 @@
 from bs4 import BeautifulSoup
 import requests
 import json
-from bselib.getId import getScript_id 
+from bselib.getId import getScript_id, getScriptUrl
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'}
+# api.bseindia.com now rejects requests that don't originate from the BSE site:
+# without these Origin/Referer headers it serves the SPA landing page (HTML) instead
+# of JSON, so .json() fails. Required for HighLow / TabResults / ComHeader / EQPeerGp.
+bse_api_headers = dict(headers, **{'Origin': 'https://www.bseindia.com',
+    'Referer': 'https://www.bseindia.com/', 'Accept': 'application/json, text/plain, */*'})
 invalid_script_code = {'info' : 'Not a valid script_code'}
 error = {'info' : 'Error'}
 
@@ -19,24 +24,16 @@ def quote(script_code):
             quote['stockName'] = soup.select("span.companyname")[0].text
             if quote['stockName'] != '':
                 quote['currentPrice'] = soup.select("span.srcovalue strong")[0].text
-                currentPrice = soup.select("span.srcovalue strong")[0].text
-                previousClose = soup.select("td#tdpcloseopen.TTRow_right")[0].text.split('/')[0]
                 try:
-                    if currentPrice > previousClose:
-                        change = soup.select("span#spanchangVal.srcovalue")[0].text.split('(')[0].strip()
-                        quote['change'] = '+'+change
-                        pChange = soup.select("span#spanchangVal.srcovalue")[0].text.split('(')[1].strip()[:-2]
-                        quote['pChange'] = '+'+pChange
-                    elif currentPrice == previousClose:
-                        quote['change'] = soup.select("span#spanchangVal.srcovalue")[0].text.split('(')[0].strip()
-                        quote['pChange'] = soup.select("span#spanchangVal.srcovalue")[0].text.split('(')[1].strip()[:-2]
-                    else:
-                        change = soup.select("span#spanchangVal.srcovalue")[0].text.split('(')[0].strip()
-                        quote['change'] = '-'+change
-                        pChange = soup.select("span#spanchangVal.srcovalue")[0].text.split('(')[1].strip()[:-2]
-                        quote['pChange'] = '-'+pChange
-
-                except IndexError:
+                    # e.g. "-29.45 ( -2.18%)" — BSE already encodes the sign, so derive
+                    # the prefix from the number itself instead of string-comparing prices.
+                    change_text = soup.select("span#spanchangVal.srcovalue")[0].text
+                    change = change_text.split('(')[0].strip().replace('+', '')
+                    pChange = change_text.split('(')[1].strip()[:-2].replace('+', '')
+                    sign = '+' if float(change.replace(',', '')) > 0 else ''
+                    quote['change'] = sign + change
+                    quote['pChange'] = sign + pChange
+                except (IndexError, ValueError):
                     quote['change'] = "-"
                     quote['pChange'] = "-"
                 quote['ltd'] = soup.select("div.companyright span")[0].text
@@ -80,7 +77,7 @@ def quote(script_code):
 
                 # # HIGHS AND LOWS: 1-DAY, 1-WEEK, 1-MONTH, 52-WEEK
                 baseurl2 = 'https://api.bseindia.com/BseIndiaAPI/api/HighLow/w?Type=EQ&flag=C&scripcode='
-                response2 = requests.get(baseurl2 + str(script_code), headers=headers)
+                response2 = requests.get(baseurl2 + str(script_code), headers=bse_api_headers)
                 highLow = response2.json()
                 a = highLow['Fifty2WkHigh_adj']
                 b = highLow['Fifty2WkLow_adj']
@@ -103,7 +100,7 @@ def bulk_deals(script_code):
         script_code = int(script_code)   
         if len(str(script_code)) == 6:     
             baseurl = "https://api.bseindia.com/BseIndiaAPI/api/TabResults/w?scripcode="+str(script_code)+"&tabtype=BULK"
-            response = requests.get(baseurl, headers=headers)
+            response = requests.get(baseurl, headers=bse_api_headers)
             bulkDeals = response.json()
             if len(bulkDeals) == 0:
                 bulkDeals = error
@@ -122,14 +119,14 @@ def ratios(script_code):
         if len(str(script_code)) == 6:
         # RATIOS: PE, EPS(TTM), CEPS, PB, ROE, FACEVALUE
             baseurl = "https://api.bseindia.com/BseIndiaAPI/api/ComHeader/w?quotetype=EQ&scripcode="+str(script_code)+"&seriesid="
-            response = requests.get(baseurl, headers=headers)
+            response = requests.get(baseurl, headers=bse_api_headers)
             ratio1 = response.json()
             if (ratio1['SecurityId'] == None):
                 return invalid_script_code
             # INFO(52 wk high-low with dates,Revenue,PAT,Equity) RATIOS(OPM,NPM,RONW)
             ratio3 = dict()
             baseurl1 = "https://api.bseindia.com/BseIndiaAPI/api/EQPeerGp/w?scripcode="+str(script_code)+"&scripcomare="
-            response1 = requests.get(baseurl1)
+            response1 = requests.get(baseurl1, headers=bse_api_headers)
             ratio2 = response1.json()
             ratio3['OPM'] = ratio2['Table'][0]['OPM']
             ratio3['NPM'] = ratio2['Table'][0]['NPM']
@@ -153,7 +150,7 @@ def peers(script_code):
             # PEER COMPARISON WITH INFO(52 wk high-low with dates,Revenue,PAT,Equity,Shareholdings) 
             # RATIOS(OPM,NPM,RONW,EPS,CEPS,PE)
             baseurl = "https://api.bseindia.com/BseIndiaAPI/api/EQPeerGp/w?scripcode="+str(script_code)+"&scripcomare="
-            response = requests.get(baseurl, headers=headers)
+            response = requests.get(baseurl, headers=bse_api_headers)
             peer_comp = response.json()
             if peer_comp['Table'][0]['scrip_cd'] == None:
                 return invalid_script_code
@@ -227,29 +224,34 @@ def corporate_actions(script_code):
 
 
 def get_profile(script_code):
+    # Sourced from Screener.in. (Previously scraped Yahoo Finance's /profile page,
+    # which Yahoo decommissioned — it now 404s. Screener exposes the business
+    # description, website and exchange links reliably; sector/industry/CEO are no
+    # longer available, so those keys were dropped. See DESIGN_DECISIONS.md ADR.)
     try:
         # script codes are suppose to be 6 digit integers
-        script_code = int(script_code)   
-        if len(str(script_code)) == 6:
-            data = getScript_id(script_code,"name")  
-            yahoo_url = 'https://query1.finance.yahoo.com/v1/finance/search?q='+str(data)+'&quotesCount=6&newsCount=0&enableFuzzyQuery=false&quotesQueryId=tss_match_phrase_query&multiQuoteQueryId=multi_quote_single_token_query&newsQueryId=news_ss_symbols&enableCb=false&enableNavLinks=false&vespaNewsTimeoutMs=600'
-            yahoo = requests.get(yahoo_url, headers=headers)
-            res = yahoo.json()
-            symbol = res['quotes'][0]['symbol']
-            profile_url = 'https://in.finance.yahoo.com/quote/'+str(symbol)+'/profile'
-            res = requests.get(profile_url, headers=headers)
-            soup = BeautifulSoup(res.text,'lxml')
-            link = soup.select("div.asset-profile-container div p a")[1].text
-            sector = soup.select("div.asset-profile-container div div p span")[1].text
-            industry = soup.select("div.asset-profile-container div div p span")[3].text
-            comp_name = soup.select("div.asset-profile-container h3")[0].text
-            post = soup.select("div section section span")[7].text
-            name = soup.select("div section section span")[6].text
-            description = soup.select('section p')[2].text
-            profile = {'script_code':script_code, 'symbol':symbol, 'Name':comp_name, 'description':description, 
-            post:name, 'website':link, 'industry':industry, 'sector':sector}
-        else:
+        script_code = int(script_code)
+        if len(str(script_code)) != 6:
             return invalid_script_code
+        screener_url = getScriptUrl(script_code)
+        res = requests.get('https://www.screener.in' + str(screener_url), headers=headers)
+        soup = BeautifulSoup(res.text, 'lxml')
+        comp_name = soup.select_one("h1").get_text(strip=True)
+        desc_tag = soup.select_one("div.company-profile div.about p")
+        description = ' '.join(desc_tag.get_text().split()) if desc_tag else ''
+        # website = first external company link that isn't an exchange/screener URL
+        website = ''
+        for a in soup.select("div.company-links a"):
+            href = a.get('href', '')
+            if href.startswith('http') and not any(d in href for d in ('bseindia', 'nseindia', 'screener')):
+                website = href
+                break
+        bse = soup.select_one("div.company-links a[href*='bseindia']")
+        nse = soup.select_one("div.company-links a[href*='nseindia']")
+        profile = {'script_code': script_code, 'Name': comp_name, 'description': description,
+            'website': website,
+            'bse_link': bse['href'] if bse else '',
+            'nse_link': nse['href'] if nse else ''}
     except:
         return error
     return profile

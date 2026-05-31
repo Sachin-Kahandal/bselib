@@ -95,40 +95,37 @@ def statement(script_code, stats):
     except:
         return error
 
+def _report_links(soup, css):
+    # Collect {visible text: href} for real document anchors under a Screener
+    # documents sub-section (skips "View all"/button-style links with no href).
+    link_text, links = list(), list()
+    for link in soup.select(css):
+        href = link.get('href')
+        if not href or not href.startswith('http'):
+            continue
+        text = ' '.join(link.get_text().split())
+        link_text.append(text)
+        links.append(href)
+    return dict(zip(link_text, links))
+
+
 def annual_reports(script_code):
     try:
         screener_url = getScriptUrl(script_code)
         res = requests.get(baseurl + str(screener_url), headers=headers)
-        soup = BeautifulSoup(res.content, 'lxml') 
-        # ANNUAL REPORT LINKS
-        link_text, links, data, data_text = list(), list(), list(), list()
-        for j in range(1,6):
-            for link in soup.select("div.three:nth-of-type(2) li:nth-of-type("+str(j)+") a"):
-                data = (link['href'])
-                links.append(data)
-                data_text = link.text.strip().replace("\n","")
-                link_text.append(data_text)
-        annual_reports =  dict(zip(link_text, links))
+        soup = BeautifulSoup(res.content, 'lxml')
+        # ANNUAL REPORT LINKS (Screener "Documents > Annual reports" section)
+        return _report_links(soup, "div.annual-reports a")
     except:
         return error
-    return annual_reports
 
 
 def credit_reports(script_code):
     try:
         screener_url = getScriptUrl(script_code)
         res = requests.get(baseurl + str(screener_url), headers=headers)
-        soup = BeautifulSoup(res.content, 'lxml') 
-        # CREDIT-RATINGS REPORT LINKS
-        link_text, links, data, data_text, count = list(), list(), list(), list(), int()
-        count = len(soup.select("div.three:nth-of-type(3) a"))
-        for j in range(1,count+1):
-            for link in soup.select("div.three:nth-of-type(3) li:nth-of-type("+str(j)+") a"):
-                data = (link['href'])
-                links.append(data)
-                data_text = link.text.strip().replace("\n","")
-                link_text.append(data_text)
-        credit_ratings = dict(zip(link_text, links))
+        soup = BeautifulSoup(res.content, 'lxml')
+        # CREDIT-RATINGS REPORT LINKS (Screener "Documents > Credit ratings" section)
+        return _report_links(soup, "div.credit-ratings a")
     except:
         return error
-    return credit_ratings
